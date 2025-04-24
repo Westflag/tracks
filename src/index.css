@@ -1,8 +1,26 @@
+/* src/index.css */
+@import './css/vars.css';
+
 body {
-    margin: 0;
-    font-family: sans-serif;
+    font-family: var(--font-family);
+    font-style: var(--font-style);
+    font-weight: var(--font-weight);
+    font-size: var(--font-size);
     line-height: 1.5;
-    background-color: #f9f9f9;
+
+    background-color: var(--color-white);
+    color: var(--color-text);
+
+    /*  For better font rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* font-smooth: antialiased; */
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+
+    margin: 0;
+    padding: 0;
 }
 
 h1,
@@ -19,11 +37,19 @@ ul,
 ol {
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 
 img {
     display: block;
     max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-main);
+}
+
+a:hover {
+    color: var(--color-button-hover);
 }
