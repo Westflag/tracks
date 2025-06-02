@@ -1,4 +1,4 @@
-import FavoriteCamper from '../FavoritCamper/FavoriteCamper.jsx'
+import FavoriteCamper from '../FavoritesCampers/FavoriteCamper.jsx'
 import LinkButton from '../LinkButton/LinkButton'
 
 import icons from '../../assets/icons.svg'

@@ -20,7 +20,7 @@ function CamperDetail({data}) {
                     <div className={css.imgContainer}>
                         {data.gallery && data.gallery.map((imgData) => {
                             return (<>
-                                <img className={css.image} src={imgData.original}/>
+                                <img className={css.image} src={imgData.original} alt={data.name}/>
                             </>)
                         })}
                     </div>
