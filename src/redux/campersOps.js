@@ -6,16 +6,16 @@ export const fetchCampers = createAsyncThunk('campers/fetch', async (nextPage, t
         const state = thunkAPI.getState()
 
         // if have more data - can load more
-        var pageNo = state.campers.page
+        let pageNumber = state.campers.page;
         if (nextPage) {
             if (state.campers.total_items > state.campers.items.length)
-                pageNo += 1
+                pageNumber += 1
             else
                 return thunkAPI.rejectWithValue('No more data for loading...')
         } else // reload from first page
-            pageNo = 1
+            pageNumber = 1
 
-        const data = await getCampersPage(pageNo, state.filters)
+        const data = await getCampersPage(pageNumber, state.filters)
         data.append = nextPage
         return data
     } catch (error) {

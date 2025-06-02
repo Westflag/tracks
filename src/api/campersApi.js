@@ -5,10 +5,10 @@ const campersPerPage = 4
 
 export const campersForms = ['panelTruck', 'fullyIntegrated', 'alcove']
 
-function prepareParams(pageNo, filters) {
+function prepareParams(pageNumber, filters) {
     const params = {
         limit: campersPerPage,
-        page: pageNo,
+        page: pageNumber,
     }
 
     // add location filter if setted
@@ -33,8 +33,8 @@ function prepareParams(pageNo, filters) {
     return params
 }
 
-export const getCampersPage = async (pageNo, filters) => {
-    const {data} = await axios.get(baseUrl, {params: prepareParams(pageNo, filters)})
+export const getCampersPage = async (pageNumber, filters) => {
+    const {data} = await axios.get(baseUrl, {params: prepareParams(pageNumber, filters)})
     return data
 }
 

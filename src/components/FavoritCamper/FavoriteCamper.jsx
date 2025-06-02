@@ -1,11 +1,11 @@
 import {useDispatch, useSelector} from 'react-redux'
-import {addFavoritCamper, deleteFavoritCamper, selectIsFavorits} from '../../redux/favoritsSlice'
+import {addFavoriteCamper, deleteFavoriteCamper, selectIsFavorites} from '../../redux/favoritesSlice.js'
 import icons from '../../assets/icons.svg'
 import css from './FavoritCamper.module.css'
 
 function FavoriteCamper({camper = -1}) {
     const dispatch = useDispatch()
-    const isFavorite = useSelector((state) => selectIsFavorits(state, camper))
+    const isFavorite = useSelector((state) => selectIsFavorites(state, camper))
     const className = isFavorite ? css.theFavorit : css.notFavorit
 
     function handleClick() {
@@ -13,9 +13,9 @@ function FavoriteCamper({camper = -1}) {
             return
 
         if (isFavorite)
-            dispatch(deleteFavoritCamper(camper))
+            dispatch(deleteFavoriteCamper(camper))
         else
-            dispatch(addFavoritCamper(camper))
+            dispatch(addFavoriteCamper(camper))
     }
 
     return (
